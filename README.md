@@ -244,4 +244,4 @@ Use descriptive commit messages and keep pull requests focused on one feature or
 
 📄 License
 
-Add the project's license here before publishing.
+Add the project's license here before publishing.##
