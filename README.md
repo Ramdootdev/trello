@@ -1,4 +1,4 @@
-# trello
+#trello
 TaskBoard
 
 A modern Trello-like project management application for organizing work with boards, lists, and cards.
@@ -44,17 +44,16 @@ Search & Organization
 
 🏗️ Architecture
 
-The application is divided into three main layers:
+The application is planned around three main layers:
 
 ┌──────────────────────┐
 │      Web Client      │
 │   React / TypeScript │
 └──────────┬───────────┘
-           │
            │ HTTP / WebSocket
            ▼
 ┌──────────────────────┐
-│       API Server     │
+│      API Server      │
 │ Authentication       │
 │ Boards & Cards       │
 │ Collaboration        │
@@ -84,8 +83,6 @@ User
                               ├── Checklist
                               └── Comment
 
-Main entities
-
 Entity| Purpose
 User| Application account
 Workspace| Container for teams and boards
@@ -98,66 +95,11 @@ Checklist| Subtasks within a card
 Comment| Discussion on a card
 Activity| History of board changes
 
-🚀 Getting Started
+🗺️ Development Plan
 
-Prerequisites
+Phase 1 — Foundation & MVP
 
-- Node.js 20+
-- npm, pnpm, or yarn
-- PostgreSQL
-- Git
-
-Installation
-
-git clone <repository-url>
-cd taskboard
-
-npm install
-
-Create an environment file:
-
-cp .env.example .env
-
-Configure the required environment variables:
-
-DATABASE_URL=
-AUTH_SECRET=
-API_URL=
-
-Run database migrations:
-
-npm run db:migrate
-
-Start the development server:
-
-npm run dev
-
-The application should then be available at:
-
-http://localhost:3000
-
-🛠️ Development
-
-Run the test suite:
-
-npm test
-
-Run linting:
-
-npm run lint
-
-Format the project:
-
-npm run format
-
-Build for production:
-
-npm run build
-
-🗺️ Roadmap
-
-Phase 1 — MVP
-
+- [ ] Project setup
 - [ ] Authentication
 - [ ] Workspace creation
 - [ ] Board creation
@@ -165,7 +107,7 @@ Phase 1 — MVP
 - [ ] Card management
 - [ ] Drag-and-drop cards
 - [ ] Card details
-- [ ] Basic responsive UI
+- [ ] Responsive UI
 
 Phase 2 — Collaboration
 
@@ -195,41 +137,106 @@ Phase 4 — Advanced Features
 - [ ] Public board sharing
 - [ ] API integrations
 
+🚀 Getting Started
+
+«The application is currently under development. The setup instructions below describe the planned development environment and will be updated as implementation progresses.»
+
+Prerequisites
+
+- Node.js 20+
+- npm, pnpm, or yarn
+- PostgreSQL
+- Git
+
+Installation
+
+git clone https://github.com/Ramdootdev/trello.git
+cd trello
+npm install
+
+Create an environment file:
+
+cp .env.example .env
+
+Configure the required environment variables:
+
+DATABASE_URL=
+AUTH_SECRET=
+API_URL=
+
+Run database migrations:
+
+npm run db:migrate
+
+Start the development server:
+
+npm run dev
+
+The application will be available at:
+
+http://localhost:3000
+
+🛠️ Development
+
+Run tests:
+
+npm test
+
+Run linting:
+
+npm run lint
+
+Format the project:
+
+npm run format
+
+Build for production:
+
+npm run build
+
 🔐 Security
 
 The application should:
 
 - Hash passwords securely
 - Validate all API input
-- Authorize every board/workspace operation
-- Prevent users from accessing unauthorized boards
+- Authorize every workspace and board operation
+- Prevent unauthorized board access
 - Protect against XSS and injection attacks
 - Store secrets only in environment variables
 - Rate-limit sensitive endpoints
 
 🧪 Testing Strategy
 
-Testing should cover:
+Unit Tests
 
-Unit tests
+Test business logic such as:
 
-Business logic such as card ordering, permissions, and validation.
+- Card ordering
+- Permissions
+- Validation
+- Board operations
 
-Integration tests
+Integration Tests
 
-API endpoints and database operations.
+Test:
 
-End-to-end tests
+- API endpoints
+- Database operations
+- Authentication
+- Authorization
+
+End-to-End Tests
 
 Critical user flows:
 
 1. Sign in
-2. Create workspace
-3. Create board
+2. Create a workspace
+3. Create a board
 4. Create lists
 5. Create a card
-6. Drag card between lists
-7. Edit card
+6. Move a card between lists
+7. Edit card details
 8. Invite a member
 
 🤝 Contributing
@@ -240,8 +247,8 @@ Critical user flows:
 4. Run linting and tests.
 5. Open a pull request.
 
-Use descriptive commit messages and keep pull requests focused on one feature or fix.
+Keep pull requests focused and use descriptive commit messages.
 
 📄 License
 
-Add the project's license here before publishing.##
+Add the project's license before publishing.
